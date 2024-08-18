@@ -1,0 +1,40 @@
+:root {
+    --cor-primaria: #F464C3;
+    --cor-secundaria: #3D1C31;
+    --cor-tres: #FDACE0;
+    --BRANCO: white;
+    --preto: black;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+#cate{
+    width: 300px;
+}
+
+.lapizera{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 110px;
+   gap: 20px;
+ }
+
+ #editar_categoria{
+    font-size: 40px;
+    color: white;
+ }
+
+.Categorias{
+    border: 3px solid white;
+    margin-top: 40px;
+ 
+}
+body{
+    background-color:var(--cor-tres)
+}
