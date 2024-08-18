@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {          //if ($_SERVER['REQUEST_MET
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorias</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="adicionar.css">
     <script src="../javascript.js" defer></script>
 
 </head>
@@ -81,17 +82,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {          //if ($_SERVER['REQUEST_MET
 
 
     </nav>
-
+    <a href="categorias.php"><img src="imgs/seta-esquerda.png" alt="" width="70px" class="seta"></a>
     <section>
-        <a href="categoriass.php">VOLTAR</a>
-        <h1 id="categorias-tit1"> <img src="./imgs/categoria.png" alt="" width="40px">Categorias</h1>
+        
+
+         <div class="add_2">
+        <img src="./imgs/mais_branco.png" alt="" width="40px">
+        <h1 id="add">Adicionar Categoria</h1>
+        </div>
+       
+
         <div class="Categorias">
 
             <div class="categorias-2">
 
                 <form action="" method="post">
-                    <input type="text" name="categoria" id="">
-                    <button type="submit" id="atualizar">Adicionar categoria</button>
+                    <input type="text" name="categoria" id="cate">
+                    <button type="submit" id="atualizar">Adicionar</button>
 
                 </form>
             </div>

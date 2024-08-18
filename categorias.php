@@ -14,6 +14,7 @@ $result = $stmt->get_result(); //$result = $stmt->get_result();: Obtém o result
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorias</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="categorias.css">
     <script src="../javascript.js" defer></script>
 
 </head>
@@ -45,8 +46,14 @@ $result = $stmt->get_result(); //$result = $stmt->get_result();: Obtém o result
         <a href="../views/catálogo.html">Catálogo</a>
         <a href="../views/sobre a loja.html">Sobre a Loja</a>
     </nav>
+
+        <div class="inicio">
+            <h1>CATEGORIAS</h1>
+            <img src="imgs/categoria.png" alt="" width="40px">
+        </div>
+
     <section>
-        <h1 id="categorias-tit1"> <img src="./imgs/categoria.png" alt="" width="40px">Categorias</h1>
+        
         <div class="Categorias">
             <?php foreach ($result as $item): ?> <!--  Inicia um loop que itera sobre cada item no resultado da consulta SQL.-->
                 <div class="categorias-2"> <!-- Define um contêiner para cada categoria.-->
@@ -66,7 +73,7 @@ $result = $stmt->get_result(); //$result = $stmt->get_result();: Obtém o result
                 </div>
             <?php endforeach; ?>
             <div class="adicionar">
-                <img src="./imgs/mais.png" alt="" width="50px"><a href="adicionar_categoria.php">Adicionar Categoria</a>
+                <img src="./imgs/mais.png" alt="" width="50px"><a href="adicionar_categoria.php">Adicionar Categorias</a>
             </div>
         </div>
     </section>
