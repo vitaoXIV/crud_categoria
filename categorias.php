@@ -34,14 +34,6 @@ $result = $stmt->get_result(); //$result = $stmt->get_result();: Obtém o result
 
 
     </header>
-    <nav class="versao-mobile" id="versao-mobile">
-        <a href="../views/Cad.html" class=""><img src="./imgs/cadastro.png.png" alt="" width="40px"> Cadastrar</a>
-        <a href="../views/duvida.html" class=""> <img src="./imgs/ajuda.png.png" alt="" width="40px"> Dúvidas</a>
-        <a href="../views/Minha lista de desejo.html" class=""> <img src="./imgs/wishlist.png" alt="" width="40px">Favoritos</a>
-        <a href="../views/Perfil.html" class=""> <img src="./imgs/perfil.png" alt="" width="40px"> Perfil</a>
-        <a href="../views/catálogo.html"><img src="./imgs/catalogue.png" alt="" width="40px"> Catálogo</a>
-        <a href="../views/sobre a loja.html"><img src="./imgs/info.png" alt="" width="40px">Sobre a Loja</a>
-    </nav>
     <nav>
         <a href="../views/catálogo.html">Catálogo</a>
         <a href="../views/sobre a loja.html">Sobre a Loja</a>
