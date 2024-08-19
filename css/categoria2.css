@@ -20,6 +20,7 @@ header {
    
 }
 
+
 #form-buscar {   /*caixa de busca*/
     flex-grow: 1;
     display: flex;
@@ -111,6 +112,8 @@ nav a {
     cursor: pointer;
     text-decoration: none;
 }
+
+
 
 .adicionar {
     grid-column: 2;

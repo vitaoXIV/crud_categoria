@@ -1,10 +1,16 @@
 <?php
-require 'conexoes.php';            // conexao com o banco de dados
-$sql = "SELECT * FROM categoria";   //$sql = "SELECT * FROM categoria";: Define a consulta SQL que será usada para buscar todos os registros da tabela categoria. O comando SELECT * seleciona todas as colunas da tabela.
-$stmt = $connect->prepare($sql);    //$stmt: É uma variável que representa um objeto de declaração preparada (statement) criado com o método prepare() da classe mysqli. Esse objeto é usado para executar consultas SQL de forma segura, prevenindo ataques como injeção de SQL.$stmt = $connect->prepare($sql);: Prepara a consulta SQL para execução. $connect é o objeto de conexão com o banco de dados e prepare é um método da classe mysqli que cria uma declaração preparada, prevenindo ataques como injeção de SQL.
-$stmt->execute(); //$stmt->execute();: Executa a declaração preparada. Isso faz com que a consulta SQL seja enviada ao banco de dados e executada.
+// Pra conectar com o banco//  
+require 'conexoes.php';
+      
+$sql = "SELECT * FROM categoria"; 
+ //Seleciona todas a tabelas de categoria
+$stmt = $connect->prepare($sql);
+//Conecta e prepara a consulta SQL para execução//    
+$stmt->execute();
+//Executa a declaração preparada//  
 
-$result = $stmt->get_result(); //$result = $stmt->get_result();: Obtém o resultado da execução da consulta. $result será um objeto mysqli_result que contém todos os registros retornados pela consulta.
+$result = $stmt->get_result();
+//Obtém o resultado da execução da consulta//
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,8 +19,8 @@ $result = $stmt->get_result(); //$result = $stmt->get_result();: Obtém o result
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorias</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="categoria2.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/categoria2.css">
   
    
  
@@ -71,7 +77,7 @@ $result = $stmt->get_result(); //$result = $stmt->get_result();: Obtém o result
                         <a href="editar.php?id=<?= ($item['id_categoria']); ?>"><img src="./imgs/editar.png" alt="" width="40px"></a>
                     </form> <!--  Cria um link para editar a categoria, com um ícone de edição.-->
 
-                    <form action="deletar_categoria.php?id=<?= ($item['id_categoria']); ?>" method="post" onsubmit="return confirm('Deseja excluir essa categoria?')">
+                    <form action="deletar.php?id=<?= ($item['id_categoria']); ?>" method="post" onsubmit="return confirm('Tem certeza que deseja excluir esta categoria?')">
                         <!-- Cria um formulário para deletar a categoria, com uma confirmação antes da exclusão.-->
                         <button type="submit" name="excluir" id="deletar"><img src="./imgs/lixeira.png" alt="" width="40px"></button>
                     </form>
@@ -79,7 +85,7 @@ $result = $stmt->get_result(); //$result = $stmt->get_result();: Obtém o result
                 </div>
             <?php endforeach; ?>
             <div class="adicionar">
-                <img src="imgs/mais_branco.png" alt="" width="10px"><a href="adicionar_categoria.php">Adicionar Categoria</a>
+                <img src="imgs/mais_branco.png" alt="" width="25px"><a href="adicionar.php">Adicionar Categoria</a>
             </div>
         </div>
     </section>

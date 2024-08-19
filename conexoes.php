@@ -2,20 +2,26 @@
 
 
 
-$localhost = "localhost";  //O endereço do servidor do banco de dados. No exemplo, é localhost, indicando que o banco de dados está no mesmo servidor que o código PHP.
-$username = "root";   //O nome de usuário para acessar o banco de dados. Aqui, é root, que é um usuário padrão em muitos sistemas de banco de dados.
-$password = "";       //A senha do usuário para o banco de dados. No exemplo, está vazia, o que significa que não há senha configurada para o usuário root.
-$db_banco = "ludofashion"; //O nome do banco de dados é ludofashion.
+$localhost = "localhost";
+ //O endereço do servidor do banco// 
+$username = "root";
+//O nome de usuário padrão//   
+$password = "";
+ //A senha do usuário para o banco de dados//, //se houve senha, ja esta aqui//     
+$db_banco = "ludofashion";
+//nome do banco// 
 
 
-$connect = mysqli_connect("$localhost", "$username", "$password", "$db_banco"); //Usa a função mysqli_connect para tentar estabelecer uma conexão com o banco de dados usando as variáveis definidas anteriormente. A função mysqli_connect requer quatro argumentos:
+$connect = mysqli_connect("$localhost", "$username", "$password", "$db_banco"); 
+//O mysqli_connect faz uma conexão com o banco  usando as variáveis usadas//.
 //A função mysqli_connect retorna um objeto de conexão, que é armazenado na variável $connect.
 
 
 
-if ($connect->connect_error) { //Se houver um erro, essa propriedade terá uma mensagem de erro.
-    die("Conexão falhou: " . $connect->connect_error);//Verifica se a propriedade connect_error não está vazia, o que indicaria um erro de conexão.
-}//Se um erro for detectado, a função die encerra a execução do script e exibe a mensagem de erro concatenada com a mensagem específica do erro obtida a partir de $connect->connect_error.
+if ($connect->connect_error) {
+    //Se aparecer um erro, retorna com uma mensagem de erro.// 
+    die("Falha de Conexão: " . $connect->connect_error);
+} //Se um erro for detectado, vai pro if e encerra a conexao//
     
 
 

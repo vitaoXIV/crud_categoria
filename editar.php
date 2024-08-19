@@ -2,37 +2,52 @@
 require 'conexoes.php';
 
 if (!isset($_GET['id'])) {
-    die("ID da categoria não fornecido."); //if (!isset($_GET['id'])) {: Verifica se o parâmetro id foi passado na URL via método GET. Se não estiver definido, o script termina a execução e exibe a mensagem "ID da categoria não fornecido."
+    // Verifica se o parâmetro id foi passado na URL via método GET//
+    die("ID da categoria obrigatório.");
+    // Se ID não for definido, o die encerra a execução e mostra "ID da categoria obrigatório." 
 
 }
 
-$id = intval($_GET['id']);  //Converte o valor do parâmetro id para um número inteiro. Isso ajuda a garantir que o valor seja tratado como um número ao interagir com o banco de dados e reduz o risco de injeção de SQL.
+$id = intval($_GET['id']);
+//Transforma o valor de id para um número int//
 
-// Obtém os detalhes da categoria
+// Obtém os detalhes da categoria//
 $sql = "SELECT * FROM categoria WHERE id_categoria = ?";
 $stmt = $connect->prepare($sql);
-$stmt->bind_param("i", $id);           //Vincula a variável $id ao marcador de posição ? na consulta SQL. O "i" indica que o parâmetro é um inteiro.
- //Prepara a consulta SQL para execução. $connect é o objeto de conexão com o banco de dados, e prepare retorna um objeto de declaração preparada ($stmt).
-$stmt->execute();
-$result = $stmt->get_result();
-$categoria = $result->fetch_assoc();//$result->fetch_assoc();: Obtém a próxima linha do resultado como um array associativo. Se a categoria com o ID fornecido existir, seus detalhes serão armazenados em $categoria.
+//Prepara a consulta SQL para execução//
+$stmt->bind_param("i", $id);
+//"i" de int, vincula a variável $id ao marcador de posição ? na consulta SQL//          
 
-if (!$categoria) {                         //if (!$categoria) {: Verifica se $categoria é false ou não contém dados (significa que a categoria com o ID fornecido não foi encontrada). Se for o caso, o script termina a execução e exibe a mensagem "Categoria não encontrada."
+$stmt->execute();
+//executa//
+$result = $stmt->get_result();
+//pega os resultados de "$stmt"//
+$categoria = $result->fetch_assoc();
+// Pega a próxima linha do resultado como um array associativo.//
+  //Se  a categoria com id existir ,suas informações são jogadas no $categoria.//
+
+if (!$categoria) {
+    //Verifica se $categoria é false ou não contém dados//                        
     die("Categoria não encontrada.");
+    //se for false, exibe essa mensagem de erro//
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
 
-    // Atualiza a categoria no banco de dados
+   
     $sql = "UPDATE categoria SET nome = ? WHERE id_categoria = ?";
+     // Atualiza para a nova no banco de dados//
     $stmt = $connect->prepare($sql);
-    $stmt->bind_param("si", $nome, $id);  //$stmt->bind_param("si", $nome, $id);: Vincula as variáveis $nome e $id aos marcadores de posição na consulta SQL. O "si" indica que $nome é uma string e $id é um inteiro.
+    $stmt->bind_param("si", $nome, $id);
+    // Vincula o $nome e $id aos marcadores de posição na consulta SQL//
+    //"si" de string e "id" um numero int//
     $stmt->execute();
 
    
     header('Location:categorias.php');
-
+    //redireciona para pagina inicial//
+ 
 }
 
 
@@ -48,8 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorias</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="editar.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/editar.css">
     <script src="../javascript.js" defer></script>
 
 </head>
@@ -93,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <form action="" method="post">
                     <input type="text" name="nome" id="cate" value="<?php echo htmlspecialchars($categoria['nome']); ?>"> 
-                    <button type="submit" name="atualizar" id="atualizar">Atualizar</button>
+                    <button type="submit" name="atualizar" id="atualizar">ATUALIZAR</button>
                     
                 </form>
             </span>
