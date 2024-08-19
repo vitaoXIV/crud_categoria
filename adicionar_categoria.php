@@ -48,40 +48,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {          //if ($_SERVER['REQUEST_MET
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorias</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="adicionar.css">
+    
+    <link rel="stylesheet" href="adicionar2.css">
     <script src="../javascript.js" defer></script>
 
 </head>
 
 <body>
-    <header>
-        <button id="button"><img src="../imgs/test.png" alt="" width="30px" onclick="barra_lateral()" id="btn-lateral"></button>
-        <h1>LudoFashion</h1>
+<header>
+        <a href=""  class="LUDO">LUDO FASHION</a>
         <form action="" id="form-buscar">
-            <input type="search" name="buscar" id="buscar" placeholder="buscar..."></input>
-            <button type="submit" id="btn-buscar"><img src="../imgs/buscar.png" alt="" width="30px"></button>
+            <input type="search" name="buscar" id="buscar" placeholder="Buscar...">
+            <button type="submit" id="btn-buscar"><img src="imgs/buscar.png" alt=""
+                    width="25px" height="25px">
+            </button>
+
         </form>
-        <a href="../views/Cad.html" class="icon-link"><img src="./imgs/cadastro.png.png" alt="" width="40px"> Cadastre-se</a>
-        <a href="../views/duvida.html" class="icon-link"> <img src="./imgs/ajuda.png.png" alt="" width="40px"> Dúvidas</a>
-        <a href="../views/Minha lista de desejo.html" class="icon-link"> <img src="./imgs/wishlist.png" alt="" width="40px"> Favoritos</a>
-        <a href="../views/Perfil.html" class="icon-link"> <img src="./imgs/perfil.png" alt="" width="40px"> Perfil</a>
-
-
+        <a href="" class="icon-link" id="cadastru">
+            <img src="IMGS/icone pessoa.png" alt="" width="50px" height="50px">
+            Cadastre-se
+            <a href="" class="icon-link" id="duvido">
+                <img src="IMGS/help_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="" width="50px" height="50px">
+                Dúvidas
+                <a href="" class="icon-link" id="casa">
+                    <img src="IMGS/casa.png" alt="" width="45px" height="45px">
+                    Home
+                 </a>
+                 <a href="" class="icon-link" id="fav">
+                    <img src="IMGS/favorito.png" alt="" width="45px" height="45px">
+                    Favoritos
+                 </a>
+        </a>
     </header>
-    <nav class="versao-mobile" id="versao-mobile">
-        <a href="../views/Cad.html" class=""><img src="./imgs/cadastro.png.png" alt="" width="40px"> Cadastrar</a>
-        <a href="../views/duvida.html" class=""> <img src="./imgs/ajuda.png.png" alt="" width="40px"> Dúvidas</a>
-        <a href="../views/Minha lista de desejo.html" class=""> <img src="./imgs/wishlist.png" alt="" width="40px">Favoritos</a>
-        <a href="../views/Perfil.html" class=""> <img src="./imgs/perfil.png" alt="" width="40px"> Perfil</a>
-        <a href="../views/catálogo.html"><img src="./imgs/catalogue.png" alt="" width="40px"> Catálogo</a>
-        <a href="../views/sobre a loja.html"><img src="./imgs/info.png" alt="" width="40px">Sobre a Loja</a>
-    </nav>
-    <nav>
-        <a href="../views/catálogo.html">Catálogo</a>
-        <a href="../views/sobre a loja.html">Sobre a Loja</a>
-
-
-    </nav>
+    
     <a href="categorias.php"><img src="imgs/seta-esquerda.png" alt="" width="70px" class="seta"></a>
     <section>
         
@@ -98,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {          //if ($_SERVER['REQUEST_MET
 
                 <form action="" method="post">
                     <input type="text" name="categoria" id="cate">
-                    <button type="submit" id="atualizar">Adicionar</button>
+                    <button type="submit" id="atualizar" class="adi">Adicionar</button>
 
                 </form>
             </div>

@@ -82,32 +82,22 @@ header a {
 }
 
 
-#cate{
-    width: 300px;
-    height: 30px;
+
+body{
+    background-color: var(--cor-tres);
 }
-
-
-.lapizera{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-top: 110px;
-   gap: 20px;
- }
-
- #editar_categoria{
-    font-size: 40px;
+.add_2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 110px;
     color: white;
- }
+    gap: 20px;
+   
+}
 
 .Categorias{
-    border: 3px solid white;
+    border: 2px solid white;
     margin-top: 40px;
     width: 900px;
-    
- 
-}
-body{
-    background-color:var(--cor-tres)
 }
